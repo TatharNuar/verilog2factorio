@@ -1,5 +1,5 @@
 
-module collatz (input clk, input start, input [15:0] data, output reg [15:0] val);
+module collatz #(parameter INPUT_WIDTH=16, parameter OUTPUT_WIDTH=16) (input clk, input start, input [INPUT_WIDTH-1:0] data, output reg [OUTPUT_WIDTH-1:0] val);
   always @(posedge clk) begin
     if(start) 
       val <= data;
